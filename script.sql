@@ -118,7 +118,7 @@ VALUES (
     );
 SET @i = @i + 1;
 END;
---3 marcas mas solicitadas, cantidad de solicitudes de cada una y order descendente.
+--3 marcas más solicitadas, cantidad de solicitudes de cada una y orden descendente.
 SELECT TOP 3 SUM(Solicitudes.Cantidad) AS TotalQuantity,
     MarcaAuto.Nombre
 FROM Solicitudes
@@ -150,7 +150,7 @@ FROM Solicitudes
 GROUP BY Solicitudes.ModeloAutoId,
     ModeloAuto.Nombre
 HAVING COUNT(Solicitudes.ModeloAutoId) = 0;
---3 meses con mas ventas
+--3 meses con mas ventas.
 SELECT TOP 3 SUM(Solicitudes.Cantidad * ModeloAuto.Precio) AS Total,
     YEAR(Solicitudes.Fecha) AS Año,
     MONTH(Solicitudes.Fecha) AS Mes
